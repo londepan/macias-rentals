@@ -1,0 +1,1 @@
+window.makePDF = () => alert('PDF generator not implemented.');
