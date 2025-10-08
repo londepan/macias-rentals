@@ -2,28 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-<<<<<<< HEAD
   <title>Macias Specialty — Genie TZ‑50DC Rental</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Minimal deps kept for future extensibility (no PDF buttons in UI) -->
-  <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-
   <style>
     :root{
-      /* Macias brand — aligned with plans.maciasspecialty.com */
       --steel:#2f5d75; --orange:#f56f27; --ink:#212529; --muted:#5c6770;
       --card:#f6f8fa; --border:#e5e7eb; --bg:#ffffff;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.5 Helvetica, Arial, sans-serif}
-
-    /* Shell */
     .container{max-width:1120px;margin:0 auto;padding:18px}
     header.site{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:20}
     .topbar{display:flex;align-items:center;gap:14px;padding:10px 16px}
-    .logo{height:44px;width:auto}
     .brand{display:flex;flex-direction:column}
     .brand .h{font-weight:800;color:var(--steel);letter-spacing:.2px}
     .brand .s{color:var(--muted);font-size:12px}
@@ -31,53 +21,26 @@
     .btn{background:var(--steel);color:#fff;border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
     .btn.secondary{background:var(--orange)}
     .btn.ghost{background:#fff;color:var(--steel);border:1px solid var(--steel)}
-
-    /* Hero */
     .hero{background:linear-gradient(180deg,#ffffff, #f9fafb);border-bottom:1px solid var(--border)}
     .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center;padding:20px 16px}
     .hero h1{margin:0 0 8px 0;font-size:28px;color:var(--steel)}
     .hero p{margin:0 0 12px 0;color:var(--muted)}
     .notice{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
-
-    /* Sections */
     .section{background:var(--bg);padding:18px 16px}
     .section h2{margin:0 0 10px 0;font-size:20px;color:var(--steel);position:relative}
     .section h2::after{content:"";display:block;width:60px;height:3px;background:var(--orange);border-radius:3px;margin-top:6px}
-
-    /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid var(--border);cursor:pointer}
-
-    /* Lightbox */
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
-    .lightbox.open{display:flex}
-    .lightbox img{max-width:90vw;max-height:85vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);background:#fff}
-    .lightbox .close{position:absolute;top:14px;right:16px;background:#ffffff;border:0;border-radius:10px;padding:6px 10px;font-size:22px;line-height:1;color:#111;cursor:pointer}
-    .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.9);border:0;border-radius:10px;padding:10px 12px;font-size:22px;line-height:1;color:#111;cursor:pointer}
-    .lightbox .nav.prev{left:16px}
-    .lightbox .nav.next{right:16px}
-
-    /* Calendar */
-    iframe.calendar{width:100%;height:640px;border:0;border-radius:12px}
-
-    /* Forms */
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
     .form label{font-weight:600}
     .form input, .form select{width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-top:6px}
-
-    /* Agreement */
     .agreement .grid{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:12px}
-
     footer.site{border-top:1px solid var(--border);padding:14px 16px;color:var(--muted);text-align:center}
-
     @media (max-width:900px){.hero-inner{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header class="site">
     <div class="topbar container">
-      <img class="logo" src="assets/MaciasSCLogo.png" alt="Macias Specialty Contracting" />
       <div class="brand">
         <div class="h">MACIAS SPECIALTY CONTRACTING</div>
         <div class="s">Genie TZ‑50DC Towable Boom Lift</div>
@@ -105,56 +68,26 @@
     </div>
   </section>
 
-  <!-- Gallery (add your photos in /assets and update paths) -->
-  
-
-  
-
   <section class="section container" id="booking">
     <h2>Contact & Booking</h2>
-    
-    <!-- Netlify Forms: one‑click email submission -->
     <form name="tz50-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="inquiryForm" class="form" style="margin:0" onsubmit="handleInquirySubmit(event)">
-      <!-- Required hidden input for Netlify -->
       <input type="hidden" name="form-name" value="tz50-inquiry" />
-      <!-- Honeypot field (kept hidden) -->
       <p style="display:none">
         <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
       </p>
-
       <div class="grid-2">
-        <div>
-          <label>Start Date<input name="start_date" type="date"></label>
-        </div>
-        <div>
-          <label>End Date<input name="end_date" type="date"></label>
-        </div>
-        <div>
-          <label>Full Name<input name="full_name" type="text" placeholder="Your name" required></label>
-        </div>
-        <div>
-          <label>Phone<input name="phone" type="text" placeholder="(xxx) xxx-xxxx" required></label>
-        </div>
-        <div style="grid-column:1/-1">
-          <label>Email<input name="email" type="email" placeholder="you@company.com" required></label>
-        </div>
-        <div style="grid-column:1/-1">
-          <label>Notes / Jobsite Address (optional)
-            <input name="notes" type="text" placeholder="Tell us anything helpful (access, delivery, gate code)…">
-          </label>
-        </div>
+        <div><label>Start Date<input name="start_date" type="date"></label></div>
+        <div><label>End Date<input name="end_date" type="date"></label></div>
+        <div><label>Full Name<input name="full_name" type="text" placeholder="Your name" required></label></div>
+        <div><label>Phone<input name="phone" type="text" placeholder="(xxx) xxx-xxxx" required></label></div>
+        <div style="grid-column:1/-1"><label>Email<input name="email" type="email" placeholder="you@company.com" required></label></div>
+        <div style="grid-column:1/-1"><label>Notes / Jobsite Address (optional)<input name="notes" type="text" placeholder="Tell us anything helpful (access, delivery, gate code)…"></label></div>
       </div>
-
       <p class="muted" style="margin-top:8px">Contact us for availability. We’ll confirm dates and delivery options.</p>
-
       <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap">
         <button class="btn secondary" type="submit">Send Inquiry</button>
         <a class="btn ghost" href="tel:16822483278">Call 682‑248‑3278</a>
       </div>
-
-      <!-- Optional CAPTCHA (uncomment in production)
-      <div data-netlify-recaptcha="true"></div>
-      -->
       <div id="formStatus" class="notice" style="display:none;margin-top:12px"><strong>Thanks!</strong> Your inquiry was sent. We’ll contact you to confirm availability.</div>
     </form>
   </section>
@@ -162,88 +95,6 @@
   <section class="section container agreement" id="capture">
     <h2>Rental Agreement</h2>
     <p class="muted">Macias Specialty Contracting, LLC • www.maciasspecialty.com • 682‑248‑3278 • 2418 Cales Dr., Arlington, TX 76013</p>
-=======
-  <title>Macias Specialty – Genie TZ-50DC Rental Agreement & Booking</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Dependencies for PDF generation -->
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
-
-  <style>
-    :root{ --ink:#212529; --muted:#5c6770; --steel:#2f5d75; --border:#e5e7eb; }
-    body{ font-family: Helvetica, Arial, sans-serif; margin:20px; color:var(--ink); }
-    .toolbar{ display:flex; gap:12px; align-items:center; margin-bottom:16px; flex-wrap:wrap; }
-    .btn{ padding:8px 14px; border:0; border-radius:10px; background:#2f5d75; color:#fff; cursor:pointer; }
-    .btn.secondary{ background:#f56f27; }
-    .section{ border:1px solid var(--border); border-radius:12px; padding:14px; margin:14px 0; }
-    .section h3{ margin:0 0 8px 0; color:var(--steel); }
-    .grid{ display:grid; grid-template-columns:repeat(2, minmax(220px,1fr)); gap:10px 14px; }
-    input[type="text"], input[type="date"], input[type="time"], textarea, select{
-      width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:8px;
-    }
-    .muted{ color:var(--muted); font-size:.95rem; }
-    a.buttonlike{ text-decoration:none; background:#e2e8f0; color:#111; padding:8px 12px; border-radius:10px; }
-  </style>
-</head>
-<body>
-
-  <div class="toolbar">
-    <strong>MACIAS SPECIALTY CONTRACTING — Genie TZ-50DC Towable Boom Lift</strong>
-    <button class="btn" type="button" onclick="makePDF()">Create PDF</button>
-  </div>
-
-  <div class="section">
-    <h3>About the Genie TZ-50DC</h3>
-    <p class="muted">The Genie® TZ™-50DC towable boom lift provides industry‑leading outreach and working range. Ideal for contractors, facility maintenance, painters, tree services, and more. Easy to tow and quick to set up for safe access at height.</p>
-  </div>
-
-  <div class="section">
-    <h3>Lift Specifications</h3>
-    <ul>
-      <li>Max Working Height: 55 ft (16.76 m)</li>
-      <li>Max Platform Height: 50 ft (15.24 m)</li>
-      <li>Horizontal Outreach: 29 ft (8.89 m)</li>
-      <li>Lifting Capacity: 500 lbs (227 kg)</li>
-      <li>Power: 24V DC Battery System</li>
-      <li>Weight: ~4,300 lbs (1,950 kg)</li>
-      <li>Auto‑leveling outriggers; drive and set options</li>
-    </ul>
-  </div>
-
-  <div class="section" id="calendar">
-    <h3>Availability Calendar</h3>
-    <p class="muted">This is a live calendar embed. Replace with your Google Calendar public embed when ready.</p>
-    <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=c_9ef95bb4f7eba790362059cc01bb87ed53adc8add12ebc379898c186953dccbc%40group.calendar.google.com&ctz=America%2FChicago
-            style="width:100%;height:640px;border:0;border-radius:12px"></iframe>
-  </div>
-
-  <div class="section">
-    <h3>Rental Rates</h3>
-    <p><strong>$400/day</strong> · <strong>$1,000/week</strong> · <strong>$2,500/month</strong> — <em>$250 deposit required to confirm booking</em></p>
-
-    <div class="grid">
-      <div><label>Start Date <input id="bw_start" type="date" /></label></div>
-      <div><label>End Date <input id="bw_end" type="date" /></label></div>
-      <div><label>Full Name <input id="bw_name" type="text" placeholder="Your name" /></label></div>
-      <div><label>Phone <input id="bw_phone" type="text" placeholder="(xxx) xxx-xxxx" /></label></div>
-      <div style="grid-column:1/-1"><label>Email <input id="bw_email" type="text" placeholder="you@company.com" /></label></div>
-    </div>
-
-    <p id="bw_price" class="muted">Pick dates to see price. (Daily $400 · Weekly $1,000 · Monthly $2,500 · $250 deposit)</p>
-
-    <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
-      <div id="bw_status" class="muted"></div>
-      <button class="btn" type="button" onclick="bwCheck()">Check Availability</button>
-      <button class="btn secondary" type="button" onclick="bwBook()" id="bw_book" disabled>Book Now — $250 Deposit</button>
-    </div>
-  </div>
-
-  <div class="section" id="capture">
-    <h3>Rental Agreement – Macias Specialty Contracting, LLC</h3>
-    <p class="muted">Website: www.maciasspecialty.com • Phone: 682‑248‑3278 • Address: 2418 Cales Dr., Arlington, TX 76013</p>
-
->>>>>>> 921a23a (Initial commit: Macias TZ-50DC landing + booking + agreement)
     <div class="grid">
       <label>Renter Name <input type="text"></label>
       <label>Company <input type="text"></label>
@@ -254,76 +105,20 @@
       <label>Start Date <input type="date"></label>
       <label>End Date <input type="date"></label>
     </div>
-<<<<<<< HEAD
     <p><strong>Booking:</strong> Contact us to finalize availability and deposit. Renter consents to all safety regulations, OSHA/ANSI compliance, and Macias Specialty Contracting terms.</p>
   </section>
 
-  <footer class="site">
-    © <span id="y"></span> Macias Specialty Contracting — All rights reserved.
-  </footer>
-
-  <!-- Lightbox overlay -->
-  
+  <footer class="site">© <span id="y"></span> Macias Specialty Contracting — All rights reserved.</footer>
 
   <script>
-    // Year
     document.getElementById('y').textContent=new Date().getFullYear();
-
-    // Simple NA booking stub preserved for future use
-    async function apiCheckAvailability(){return {available:true}}
-
-    // Lightbox
-    (function(){const lb=document.getElementById('lightbox'),img=document.getElementById('lbImg');const btnClose=document.getElementById('lbClose');const btnPrev=document.getElementById('lbPrev');const btnNext=document.getElementById('lbNext');let index=0,urls=[];function gather(){return Array.from(document.querySelectorAll('#galleryGrid img')).map(i=>i.src);}function open(i){urls=gather();index=Math.max(0,Math.min(i,urls.length-1));if(!urls.length)return;img.src=urls[index];lb.classList.add('open');lb.removeAttribute('hidden');}function close(){lb.classList.remove('open');lb.setAttribute('hidden','');img.src='';}function step(dir){if(!urls.length)return;index=(index+dir+urls.length)%urls.length;img.src=urls[index];}document.addEventListener('click',(e)=>{const thumb=e.target.closest('#galleryGrid img');if(thumb){const all=Array.from(document.querySelectorAll('#galleryGrid img'));const i=Math.max(0,all.indexOf(thumb));open(i);return;}if(e.target===lb)close();});btnClose.addEventListener('click',close);btnPrev.addEventListener('click',()=>step(-1));btnNext.addEventListener('click',()=>step(1));
-    // Inline Netlify Forms submit to avoid 404 redirect
     function handleInquirySubmit(e){
       e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      const body = new URLSearchParams(data).toString();
-      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
-        .then(()=>{ form.reset(); const s=document.getElementById('formStatus'); if(s) s.style.display='block'; })
-        .catch(()=>{ alert('Submission failed. Please email info@maciasspecialty.com'); });
+      const form=e.target;const data=new FormData(form);const body=new URLSearchParams(data).toString();
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body})
+      .then(()=>{form.reset();const s=document.getElementById('formStatus');if(s)s.style.display='block';})
+      .catch(()=>{alert('Submission failed. Please email info@maciasspecialty.com');});
     }
   </script>
-
-  <!-- (Optional) PDF generator kept referenced but no buttons in UI -->
-  <script defer src="macias-pdf.js"></script>
 </body>
 </html>
-=======
-
-    <p><strong>Deposit:</strong> $250 required to reserve equipment. Renter consents to all safety regulations, OSHA/ANSI compliance, and Macias Specialty Contracting terms.</p>
-
-    <button class="btn" type="button" onclick="makePDF()">Generate Rental PDF</button>
-  </div>
-
-  <script>
-    const RATES = { day: 400, week: 1000, month: 2500, deposit: 250 };
-    function daysBetween(a,b){ try{ const d1=new Date(a), d2=new Date(b); const ms=d2-d1; if(!isFinite(ms)||ms<=0) return 0; return Math.ceil(ms/86400000);}catch(e){return 0;} }
-    function bestPrice(days){ if(days<=0) return {label:'—', total:0}; let d=days,total=0,parts=[]; const take=(n,u,p)=>{const k=Math.floor(d/n); if(k>0){total+=k*p; parts.push(`${k} ${u}${k>1?'s':''}`); d-=k*n;}}; take(30,'month',RATES.month); take(7,'week',RATES.week); take(1,'day',RATES.day); return {label:parts.join(' + ')||'1 day', total}; }
-    async function apiCheckAvailability(start,end){ return { available:true }; }
-    async function bwCheck(){
-      const s=document.getElementById('bw_start').value, e=document.getElementById('bw_end').value;
-      const days=daysBetween(s,e);
-      const price=bestPrice(days);
-      const priceLine=(days>0)?`${price.label} = $${price.total.toLocaleString()} (+ $${RATES.deposit} deposit)`:'Pick valid dates to see price';
-      document.getElementById('bw_price').textContent=priceLine;
-      const statusEl=document.getElementById('bw_status');
-      const bookBtn=document.getElementById('bw_book');
-      if(days<=0){ statusEl.textContent=''; bookBtn.disabled=true; return; }
-      const res=await apiCheckAvailability(s,e);
-      if(res.available){ statusEl.textContent='Available'; bookBtn.disabled=false; } else { statusEl.textContent='Waitlist'; bookBtn.disabled=false; }
-    }
-    async function bwBook(){
-      const name=document.getElementById('bw_name').value.trim();
-      const phone=document.getElementById('bw_phone').value.trim();
-      const email=document.getElementById('bw_email').value.trim();
-      if(!name||!phone||!email){ alert('Please complete name, phone, and email.'); return; }
-      alert('Demo booking created. In production, this will collect the $250 deposit via Stripe and confirm your dates.');
-    }
-  </script>
-
-  <script src="macias-pdf.js" defer></script>
-</body>
-</html>
->>>>>>> 921a23a (Initial commit: Macias TZ-50DC landing + booking + agreement)
