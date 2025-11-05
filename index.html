@@ -92,24 +92,40 @@
     </form>
   </section>
 
-  <section class="section container agreement" id="capture">
-    <h2>Rental Agreement</h2>
-    <p class="muted">Macias Specialty Contracting, LLC • www.maciasspecialty.com • 682‑248‑3278 • 2418 Cales Dr., Arlington, TX 76013</p>
-    <div class="grid">
-      <label>Renter Name <input type="text"></label>
-      <label>Company <input type="text"></label>
-      <label>Phone <input type="text"></label>
-      <label>Email <input type="text"></label>
-      <label>Billing Address <input type="text"></label>
-      <label>Rental Term <input type="text" placeholder="Daily / Weekly / Monthly"></label>
-      <label>Start Date <input type="date"></label>
-      <label>End Date <input type="date"></label>
-    </div>
-    <p><strong>Booking:</strong> Contact us to finalize availability and deposit. Renter consents to all safety regulations, OSHA/ANSI compliance, and Macias Specialty Contracting terms.</p>
+  <footer class="site">© <span id="y"></span> Macias Specialty Contracting — All rights reserved.</footer>
   </section>
 
-  <footer class="site">© <span id="y"></span> Macias Specialty Contracting — All rights reserved.</footer>
-
+  <section class="section container">
+    <h2>Process Payment</h2>
+    <div class="form">
+      <div class="grid-2">
+        <div>
+          <label>Credit Card Number
+            <input type="text" placeholder="xxxx xxxx xxxx xxxx" required>
+          </label>
+        </div>
+        <div>
+          <label>Name on Card
+            <input type="text" placeholder="Your Name" required>
+          </label>
+        </div>
+        <div>
+          <label>Expiration Date
+            <input type="text" placeholder="MM/YY" required>
+          </label>
+        </div>
+        <div>
+          <label>CVV
+            <input type="text" placeholder="xxx" required>
+          </label>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:8px">This is a placeholder for a real payment gateway integration (e.g., Stripe, PayPal).</p>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap">
+        <button class="btn secondary" type="button">Process Payment</button>
+      </div>
+    </div>
+  </section>  
   <script>
     document.getElementById('y').textContent=new Date().getFullYear();
     function handleInquirySubmit(e){
