@@ -1,257 +1,124 @@
+<!doctype html>
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8" />
-
   <title>Macias Specialty — Genie TZ‑50DC Rental</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Minimal deps kept for future extensibility (no PDF buttons in UI) -->
-
-  <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-
-  <script defer src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-
   <style>
-
     :root{
-
-      /* Macias brand — aligned with plans.maciasspecialty.com */
-
       --steel:#2f5d75; --orange:#f56f27; --ink:#212529; --muted:#5c6770;
-
       --card:#f6f8fa; --border:#e5e7eb; --bg:#ffffff;
-
     }
-
     *{box-sizing:border-box}
-
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.5 Helvetica, Arial, sans-serif}
-
-    /* Shell */
-
     .container{max-width:1120px;margin:0 auto;padding:18px}
-
     header.site{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:20}
-
     .topbar{display:flex;align-items:center;gap:14px;padding:10px 16px}
-
-    .logo{height:44px;width:auto}
-
     .brand{display:flex;flex-direction:column}
-
     .brand .h{font-weight:800;color:var(--steel);letter-spacing:.2px}
-
     .brand .s{color:var(--muted);font-size:12px}
-
     .actions{margin-left:auto;display:flex;gap:10px}
-
     .btn{background:var(--steel);color:#fff;border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
-
     .btn.secondary{background:var(--orange)}
-
     .btn.ghost{background:#fff;color:var(--steel);border:1px solid var(--steel)}
-
-    /* Hero */
-
     .hero{background:linear-gradient(180deg,#ffffff, #f9fafb);border-bottom:1px solid var(--border)}
-
     .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center;padding:20px 16px}
-
     .hero h1{margin:0 0 8px 0;font-size:28px;color:var(--steel)}
-
     .hero p{margin:0 0 12px 0;color:var(--muted)}
-
     .notice{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
-
-    /* Sections */
-
     .section{background:var(--bg);padding:18px 16px}
-
     .section h2{margin:0 0 10px 0;font-size:20px;color:var(--steel);position:relative}
-
     .section h2::after{content:"";display:block;width:60px;height:3px;background:var(--orange);border-radius:3px;margin-top:6px}
-
-    /* Gallery */
-
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-
-    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid var(--border);cursor:pointer}
-
-    /* Lightbox */
-
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
-
-    .lightbox.open{display:flex}
-
-    .lightbox img{max-width:90vw;max-height:85vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);background:#fff}
-
-    .lightbox .close{position:absolute;top:14px;right:16px;background:#ffffff;border:0;border-radius:10px;padding:6px 10px;font-size:22px;line-height:1;color:#111;cursor:pointer}
-
-    .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.9);border:0;border-radius:10px;padding:10px 12px;font-size:22px;line-height:1;color:#111;cursor:pointer}
-
-    .lightbox .nav.prev{left:16px}
-
-    .lightbox .nav.next{right:16px}
-
-    /* Calendar */
-
-    iframe.calendar{width:100%;height:640px;border:0;border-radius:12px}
-
-    /* Forms */
-
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-
     .form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
-
     .form label{font-weight:600}
-
     .form input, .form select{width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-top:6px}
-
-    /* Agreement */
-
     .agreement .grid{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:12px}
-
     footer.site{border-top:1px solid var(--border);padding:14px 16px;color:var(--muted);text-align:center}
-
     @media (max-width:900px){.hero-inner{grid-template-columns:1fr}}
-
   </style>
-
 </head>
-
 <body>
-
   <header class="site">
-
     <div class="topbar container">
-
-      <img class="logo" src="assets/MaciasSCLogo.png" alt="Macias Specialty Contracting" />
-
       <div class="brand">
-
         <div class="h">MACIAS SPECIALTY CONTRACTING</div>
-
         <div class="s">Genie TZ‑50DC Towable Boom Lift</div>
-
       </div>
-
+      <div class="actions">
+        <button class="btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Contact Us</button>
+      </div>
     </div>
-
   </header>
 
-  <section class="section container" id="booking">
-
-    <h2>Contact & Booking</h2>
-
-    <form action="mailto:lm@maciasspecialty.com" method="post" enctype="text/plain" class="form" style="margin:0">
-
-      <div class="grid-2">
-
-        <div>
-
-          <label>Start Date<input name="start_date" type="date"></label>
-
-        </div>
-
-        <div>
-
-          <label>End Date<input name="end_date" type="date"></label>
-
-        </div>
-
-        <div>
-
-          <label>Full Name<input name="full_name" type="text" placeholder="Your name" required></label>
-
-        </div>
-
-        <div>
-
-          <label>Phone<input name="phone" type="text" placeholder="(xxx) xxx-xxxx" required></label>
-
-        </div>
-
-        <div style="grid-column:1/-1">
-
-          <label>Email<input name="email" type="email" placeholder="you@company.com" required></label>
-
-        </div>
-
-        <div style="grid-column:1/-1">
-
-          <label>Notes / Jobsite Address (optional)
-
-            <input name="notes" type="text" placeholder="Tell us anything helpful (access, delivery, gate code)…">
-
-          </label>
-
-        </div>
-
-      </div>
-
-      <p class="muted" style="margin-top:8px">Contact us for availability. We’ll confirm dates and delivery options.</p>
-
-      <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap">
-
-        <button class="btn secondary" type="submit">Send Inquiry</button>
-
-        <a class="btn ghost" href="tel:16822483278">Call 682‑248‑3278</a>
-
-      </div>
-
-    </form>
-
-  </section>
-
-  <section class="section container">
-    <h2>Process Payment</h2>
-    <div class="form">
-      <div class="grid-2">
-        <div>
-          <label>Credit Card Number
-            <input type="text" placeholder="xxxx xxxx xxxx xxxx" required>
-          </label>
-        </div>
-        <div>
-          <label>Name on Card
-            <input type="text" placeholder="Your Name" required>
-          </label>
-        </div>
-        <div>
-          <label>Expiration Date
-            <input type="text" placeholder="MM/YY" required>
-          </label>
-        </div>
-        <div>
-          <label>CVV
-            <input type="text" placeholder="xxx" required>
-          </label>
+  <section class="hero">
+    <div class="hero-inner container">
+      <div>
+        <h1>Reliable access at height — Genie TZ‑50DC</h1>
+        <p>Trusted by contractors and facility teams across DFW. Easy towing, quick setup, and industry‑leading outreach. Safety‑first and fully maintained.</p>
+        <div class="notice">
+          <strong>Contact us for availability.</strong>
+          <p class="muted" style="margin:6px 0 0">Call 682‑248‑3278 or use the form below. Delivery available.</p>
         </div>
       </div>
-      <p class="muted" style="margin-top:8px">This is a placeholder for a real payment gateway integration (e.g., Stripe, PayPal).</p>
-      <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap">
-        <button class="btn secondary" type="button">Process Payment</button>
+      <div class="notice">
+        <strong>Company</strong>
+        <p style="margin:8px 0 0">Macias Specialty Contracting, LLC<br/>2418 Cales Dr., Arlington, TX 76013<br/>www.maciasspecialty.com</p>
       </div>
     </div>
   </section>
 
-  <footer class="site">
+  <section class="section container" id="booking">
+    <h2>Contact & Booking</h2>
+    <form name="tz50-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="inquiryForm" class="form" style="margin:0" onsubmit="handleInquirySubmit(event)">
+      <input type="hidden" name="form-name" value="tz50-inquiry" />
+      <p style="display:none">
+        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+      </p>
+      <div class="grid-2">
+        <div><label>Start Date<input name="start_date" type="date"></label></div>
+        <div><label>End Date<input name="end_date" type="date"></label></div>
+        <div><label>Full Name<input name="full_name" type="text" placeholder="Your name" required></label></div>
+        <div><label>Phone<input name="phone" type="text" placeholder="(xxx) xxx-xxxx" required></label></div>
+        <div style="grid-column:1/-1"><label>Email<input name="email" type="email" placeholder="you@company.com" required></label></div>
+        <div style="grid-column:1/-1"><label>Notes / Jobsite Address (optional)<input name="notes" type="text" placeholder="Tell us anything helpful (access, delivery, gate code)…"></label></div>
+      </div>
+      <p class="muted" style="margin-top:8px">Contact us for availability. We’ll confirm dates and delivery options.</p>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap">
+        <button class="btn secondary" type="submit">Send Inquiry</button>
+        <a class="btn ghost" href="tel:16822483278">Call 682‑248‑3278</a>
+      </div>
+      <div id="formStatus" class="notice" style="display:none;margin-top:12px"><strong>Thanks!</strong> Your inquiry was sent. We’ll contact you to confirm availability.</div>
+    </form>
+  </section>
 
-    © <span id="y"></span> Macias Specialty Contracting — All rights reserved.
+  <section class="section container agreement" id="capture">
+    <h2>Rental Agreement</h2>
+    <p class="muted">Macias Specialty Contracting, LLC • www.maciasspecialty.com • 682‑248‑3278 • 2418 Cales Dr., Arlington, TX 76013</p>
+    <div class="grid">
+      <label>Renter Name <input type="text"></label>
+      <label>Company <input type="text"></label>
+      <label>Phone <input type="text"></label>
+      <label>Email <input type="text"></label>
+      <label>Billing Address <input type="text"></label>
+      <label>Rental Term <input type="text" placeholder="Daily / Weekly / Monthly"></label>
+      <label>Start Date <input type="date"></label>
+      <label>End Date <input type="date"></label>
+    </div>
+    <p><strong>Booking:</strong> Contact us to finalize availability and deposit. Renter consents to all safety regulations, OSHA/ANSI compliance, and Macias Specialty Contracting terms.</p>
+  </section>
 
-  </footer>
+  <footer class="site">© <span id="y"></span> Macias Specialty Contracting — All rights reserved.</footer>
 
   <script>
-
-    // Year
-
     document.getElementById('y').textContent=new Date().getFullYear();
-
+    function handleInquirySubmit(e){
+      e.preventDefault();
+      const form=e.target;const data=new FormData(form);const body=new URLSearchParams(data).toString();
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body})
+      .then(()=>{form.reset();const s=document.getElementById('formStatus');if(s)s.style.display='block';})
+      .catch(()=>{alert('Submission failed. Please email info@maciasspecialty.com');});
+    }
   </script>
-
 </body>
-
 </html>
